@@ -8,3 +8,11 @@
 .display {
   grid-column: span 4;
 }
+
+body {
+  font-family: "Press Start 2P", monospace;
+}
+
+button {
+  font-family: inherit;
+}
