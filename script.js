@@ -26,15 +26,15 @@ function sayHello(language) {
   }
 }
 
-function operate(z, x, y) {
-    if (z === "+") {
-        return add(x, y);
-    } else if (z === "-") {
-        return subtract(x, y);
-    } else if (z === "*") {
-        return multiply(x, y);
-    } else if (z === "/") {
-        return divide (x, y);
+function operate(operator, a, b) {
+    if (operator === "+") {
+        return add(a, b);
+    } else if (operator === "-") {
+        return subtract(a, b);
+    } else if (operator === "*") {
+        return multiply(a, b);
+    } else if (operator === "/") {
+        return divide(a, b);
     } else {
         return "Error";
     }
