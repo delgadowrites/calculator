@@ -1,3 +1,21 @@
+:root {
+  --color-bg: #656565;
+  --color-text: #bbbbbb;
+  --color-accent: #ffbf83;
+  --color-accent-2: #00ffff;
+  --color-accent-3: #bf00ff;
+}
+
+body {
+  font-family: "Press Start 2P", monospace;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+button {
+  font-family: inherit;
+}
+
 #calculator {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -7,12 +25,4 @@
 
 .display {
   grid-column: span 4;
-}
-
-body {
-  font-family: "Press Start 2P", monospace;
-}
-
-button {
-  font-family: inherit;
 }
