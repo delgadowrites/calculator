@@ -30,4 +30,8 @@ function operate(operator, a, b) {
     }
 }
 
-const display = document.querySelector(".display")
+const display = document.querySelector(".display");
+
+const operatorButtons = document.querySelectorAll(".operator");
+
+const digitButtons = document.querySelectorAll(".digit");
