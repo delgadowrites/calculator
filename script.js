@@ -1,7 +1,7 @@
 console.log("Calculator script loaded.");
 
 function add(x, y) {
-    return x + y; 
+    return x + y;
 }
 
 function subtract(x, y) {
@@ -14,16 +14,6 @@ function multiply(x, y) {
 
 function divide(x, y) {
     return x / y;
-}
-
-function sayHello(language) {
-  if (language === "es") {
-    return "Hola";
-  } else if (language === "fr") {
-    return "Bonjour";
-  } else {
-    return "Hello";
-  }
 }
 
 function operate(operator, a, b) {
@@ -39,3 +29,5 @@ function operate(operator, a, b) {
         return "Error";
     }
 }
+
+const display = document.querySelector(".display")
