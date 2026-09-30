@@ -23,6 +23,15 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: var(--color-accent);
+  color: var(--color-bg-2);
+}
+
+button:active {
+  transform: translate(2px, 2px);
+}
+
 #calculator {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
