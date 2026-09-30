@@ -32,6 +32,10 @@ button:active {
   transform: translate(2px, 2px);
 }
 
+a {
+  color: var(--color-accent-2)
+}
+
 #calculator {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
