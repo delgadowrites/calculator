@@ -35,3 +35,11 @@ const display = document.querySelector(".display");
 const operatorButtons = document.querySelectorAll(".operator");
 
 const digitButtons = document.querySelectorAll(".digit");
+
+digitButtons[0].addEventListener("click", function() {
+    console.log("7 was clicked");
+});
+
+operatorButtons[3].addEventListener("click", function() {
+    console.log("+ was clicked");
+});
