@@ -44,7 +44,11 @@ operatorButtons.forEach(function(button) {
 
 digitButtons.forEach(function(button) {
   button.addEventListener("click", function() {
-    display.textContent = display.textContent + button.textContent;
+    if (display.textContent === "0") {
+      display.textContent = button.textContent;
+    } else {
+      display.textContent = display.textContent + button.textContent;
+    }
   });
 });
 
