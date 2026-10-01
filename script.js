@@ -52,3 +52,8 @@ digitButtons.forEach(function(button) {
   });
 });
 
+const clearButton = document.querySelector(".clear");
+
+clearButton.addEventListener("click", function() {
+  display.textContent = "0";
+});
