@@ -36,10 +36,22 @@ const operatorButtons = document.querySelectorAll(".operator");
 
 const digitButtons = document.querySelectorAll(".digit");
 
-digitButtons[0].addEventListener("click", function() {
+//digitButtons[0].addEventListener("click", function() {
     console.log("7 was clicked");
+//});
+
+//operatorButtons[3].addEventListener("click", function() {
+    console.log("+ was clicked");
+//});
+
+operatorButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    console.log(button.textContent + " was clicked");
+  });
 });
 
-operatorButtons[3].addEventListener("click", function() {
-    console.log("+ was clicked");
+digitButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    console.log(button.textContent + " was clicked");
+  });
 });

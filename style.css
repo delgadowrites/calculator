@@ -33,7 +33,7 @@ button:active {
 }
 
 a {
-  color: var(--color-accent-2)
+  color: var(--color-accent-2);
 }
 
 #calculator {
