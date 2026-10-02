@@ -36,9 +36,14 @@ const operatorButtons = document.querySelectorAll(".operator");
 
 const digitButtons = document.querySelectorAll(".digit");
 
+let firstNumber = null;
+
+let currentOperator = null;
+
 operatorButtons.forEach(function(button) {
   button.addEventListener("click", function() {
-    console.log(button.textContent + " was clicked");
+    firstNumber = display.textContent;
+    currentOperator = button.textContent;
   });
 });
 
@@ -57,3 +62,4 @@ const clearButton = document.querySelector(".clear");
 clearButton.addEventListener("click", function() {
   display.textContent = "0";
 });
+
