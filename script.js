@@ -44,6 +44,7 @@ operatorButtons.forEach(function(button) {
   button.addEventListener("click", function() {
     firstNumber = display.textContent;
     currentOperator = button.textContent;
+    display.textContent = "0";
   });
 });
 
