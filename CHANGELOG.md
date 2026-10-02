@@ -2,6 +2,32 @@
 
 ## [Unreleased]
 
+## 2026-10-02
+### Added
+- The calculator now remembers the first number and the operator: created `let firstNumber` and `let currentOperator` (both start as `null`), and operator clicks save the screen text and the clicked operator into them.
+- The display resets to `0` after an operator click, so the second number starts fresh (e.g., 7, 8, + then 5 shows `5`, not `785`).
+
+### Changed
+- Replaced the operator loop's `console.log` with logic that stores the first number and operator.
+
+### Fixed
+- Added the missing `;` to the `const clearButton` line.
+- Fixed reversed assignments in the operator listener: `display.textContent = firstNumber;` became `firstNumber = display.textContent;` (and the same for the operator).
+
+## 2026-10-01
+### Added
+- Added click listeners to all digit and operator buttons using `forEach` loops.
+- Digit clicks now show on the display, adding each digit to the end (e.g., 7 then 8 shows `78`).
+- The display's starting `0` is replaced by the first digit instead of staying in front (e.g., `5`, not `05`).
+- Added the `C` button: clears the display back to `0`.
+
+### Changed
+- Replaced the 2 temporary practice listeners (7 and +) with loops covering every digit and operator button.
+
+### Fixed
+- Fixed digit clicks not updating the display: used assignment (`display.textContent = ...`) instead of `return` inside the click function.
+- Fixed indentation inside the digit listener's `if / else`.
+
 ## 2026-09-30
 ### Added
 - Styled all buttons: dark purple background (`--color-bg-2`), light gray text, 4px peach border (`--color-accent`), padding, 16px font size, and pointer cursor.
