@@ -9,11 +9,13 @@
 - Dividing by zero shows `Error` instead of `Infinity`.
 - `=` does nothing when no operator is waiting (e.g., `7 =` stays `7`), and pressing `=` twice no longer recalculates.
 - After a result or `Error`, the next digit starts a new number (e.g., `83` then `2` shows `2`, not `832`). Uses a new `let startNewNumber` true/false switch.
+- The first number stays visible on the screen after clicking an operator (e.g., `78 +` still shows `78` until the next digit is typed).
 
 ### Changed
 - `operate()` now checks for `×` and `÷` (the button symbols) instead of `*` and `/`.
 - The operator is reset to `null` after each calculation.
 - Reformatted `script.js` to consistent 2-space indentation.
+- The operator listener now turns on the `startNewNumber` switch instead of wiping the screen to `0`.
 
 ### Fixed
 - Added the missing `const` before `result` in the equals listener.
@@ -22,6 +24,7 @@
 - Fixed `=` showing `Error` when pressed with no operator.
 - Fixed digits being added to the end of a result (`832`, `Error5`).
 - Fixed inconsistent indentation in `operate()` and `divide()`.
+- Fixed pressing an operator twice (`7 + +`) storing `0` as the first number.
 
 ## 2026-10-02
 ### Added
