@@ -17,17 +17,17 @@ function divide(x, y) {
 }
 
 function operate(operator, a, b) {
-    if (operator === "+") {
-        return add(a, b);
-    } else if (operator === "-") {
-        return subtract(a, b);
-    } else if (operator === "*") {
-        return multiply(a, b);
-    } else if (operator === "/") {
-        return divide(a, b);
-    } else {
-        return "Error";
-    }
+  if (operator === "+") {
+    return add(a, b);
+} else if (operator === "-") {
+    return subtract(a, b);
+} else if (operator === "×") {
+    return multiply(a, b);
+} else if (operator === "÷") {
+    return divide(a, b);
+} else {
+    return "Error";
+}
 }
 
 const display = document.querySelector(".display");
@@ -40,33 +40,33 @@ let firstNumber = null;
 
 let currentOperator = null;
 
-operatorButtons.forEach(function(button) {
-  button.addEventListener("click", function() {
-    firstNumber = display.textContent;
-    currentOperator = button.textContent;
-    display.textContent = "0";
-  });
+operatorButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        firstNumber = display.textContent;
+        currentOperator = button.textContent;
+        display.textContent = "0";
+    });
 });
 
-digitButtons.forEach(function(button) {
-  button.addEventListener("click", function() {
-    if (display.textContent === "0") {
-      display.textContent = button.textContent;
-    } else {
-      display.textContent = display.textContent + button.textContent;
-    }
-  });
+digitButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        if (display.textContent === "0") {
+            display.textContent = button.textContent;
+        } else {
+            display.textContent = display.textContent + button.textContent;
+        }
+    });
 });
 
 const clearButton = document.querySelector(".clear");
 
-clearButton.addEventListener("click", function() {
-  display.textContent = "0";
+clearButton.addEventListener("click", function () {
+    display.textContent = "0";
 });
 
 const equalsButton = document.querySelector(".equals");
 
-equalsButton.addEventListener("click", function() {
-  const result = operate(currentOperator, Number(firstNumber), Number(display.textContent));
-  display.textContent = result;
+equalsButton.addEventListener("click", function () {
+    const result = operate(currentOperator, Number(firstNumber), Number(display.textContent));
+    display.textContent = result;
 });
