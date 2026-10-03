@@ -2,6 +2,27 @@
 
 ## [Unreleased]
 
+## 2026-10-03
+### Added
+- The `=` button now calculates: converts both stored numbers from text with `Number()`, sends them to `operate()`, and shows the result.
+- Multiply (`×`) and divide (`÷`) now work.
+- Dividing by zero shows `Error` instead of `Infinity`.
+- `=` does nothing when no operator is waiting (e.g., `7 =` stays `7`), and pressing `=` twice no longer recalculates.
+- After a result or `Error`, the next digit starts a new number (e.g., `83` then `2` shows `2`, not `832`). Uses a new `let startNewNumber` true/false switch.
+
+### Changed
+- `operate()` now checks for `×` and `÷` (the button symbols) instead of `*` and `/`.
+- The operator is reset to `null` after each calculation.
+- Reformatted `script.js` to consistent 2-space indentation.
+
+### Fixed
+- Added the missing `const` before `result` in the equals listener.
+- Fixed `×` and `÷` returning `Error` because their symbols didn't match the checks in `operate()`.
+- Fixed `Infinity` showing on divide by zero.
+- Fixed `=` showing `Error` when pressed with no operator.
+- Fixed digits being added to the end of a result (`832`, `Error5`).
+- Fixed inconsistent indentation in `operate()` and `divide()`.
+
 ## 2026-10-02
 ### Added
 - The calculator now remembers the first number and the operator: created `let firstNumber` and `let currentOperator` (both start as `null`), and operator clicks save the screen text and the clicked operator into them.
