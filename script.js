@@ -44,6 +44,8 @@ let firstNumber = null;
 
 let currentOperator = null;
 
+let startNewNumber = false;
+
 operatorButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     firstNumber = display.textContent;
@@ -54,7 +56,10 @@ operatorButtons.forEach(function (button) {
 
 digitButtons.forEach(function (button) {
   button.addEventListener("click", function () {
-    if (display.textContent === "0") {
+    if (startNewNumber === true) {
+      display.textContent = button.textContent;
+      startNewNumber = false;
+    } else if (display.textContent === "0") {
       display.textContent = button.textContent;
     } else {
       display.textContent = display.textContent + button.textContent;
@@ -75,5 +80,6 @@ equalsButton.addEventListener("click", function () {
     const result = operate(currentOperator, Number(firstNumber), Number(display.textContent));
     display.textContent = result;
     currentOperator = null;
+    startNewNumber = true;
   }
 });
