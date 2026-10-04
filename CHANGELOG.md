@@ -2,6 +2,26 @@
 
 ## [Unreleased]
 
+## 2026-10-04
+### Added
+- Chaining: pressing an operator while a calculation is waiting calculates it first (e.g., `2 + 3 +` shows `5`; then `4 =` shows `9`). Works left to right.
+- Decimal button (`.`): adds a decimal point, allows only one per number, and starts a new number as `0.`.
+- `roundResult` function: rounds every result to at most 8 decimal places (e.g., `0.1 + 0.2` shows `0.3`, `1 ÷ 3` shows `0.33333333`) and passes `Error` through unchanged.
+- Typed numbers are limited to 12 characters.
+- Long numbers and results wrap inside the display instead of spilling outside it (`overflow-wrap: anywhere`).
+- Published the calculator on GitHub Pages: https://delgadowrites.github.io/calculator/
+
+### Changed
+- Layout: the clear button moved to its own full-width row below the display and was relabeled `CLEAR`; the `.` button took its old spot next to `0`.
+- Both places that show a result now pass it through `roundResult` first.
+- The operator listener now checks for `Error` after the chaining calculation: if the screen shows `Error`, it cancels the waiting operator instead of storing `Error` as the first number.
+
+### Fixed
+- Fixed `CLEAR` only resetting the screen: it now also resets the first number, the operator and the new-number switch (e.g., `7 + CLEAR 5 =` shows `5`, not `12`).
+- Fixed calculating with `Error` producing `NaN`.
+- Fixed floating-point results like `0.30000000000000004`.
+- Removed the debug `console.log` from the first line of `script.js`.
+
 ## 2026-10-03
 ### Added
 - The `=` button now calculates: converts both stored numbers from text with `Number()`, sends them to `operate()`, and shows the result.
