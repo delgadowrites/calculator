@@ -83,6 +83,9 @@ const clearButton = document.querySelector(".clear");
 
 clearButton.addEventListener("click", function () {
   display.textContent = "0";
+  firstNumber = null;
+  currentOperator = null;
+  startNewNumber = false;
 });
 
 const equalsButton = document.querySelector(".equals");
