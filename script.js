@@ -48,6 +48,10 @@ let startNewNumber = false;
 
 operatorButtons.forEach(function (button) {
   button.addEventListener("click", function () {
+    if (currentOperator !== null && startNewNumber === false) {
+      const result = operate(currentOperator, Number(firstNumber), Number(display.textContent));
+      display.textContent = result;
+    }
     firstNumber = display.textContent;
     currentOperator = button.textContent;
     startNewNumber = true;
