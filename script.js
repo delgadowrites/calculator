@@ -60,9 +60,14 @@ operatorButtons.forEach(function (button) {
       const result = operate(currentOperator, Number(firstNumber), Number(display.textContent));
       display.textContent = roundResult(result);
     }
-    firstNumber = display.textContent;
-    currentOperator = button.textContent;
-    startNewNumber = true;
+    if (display.textContent !== "Error") {
+      firstNumber = display.textContent;
+      currentOperator = button.textContent;
+      startNewNumber = true;
+    } else {
+      currentOperator = null;
+      startNewNumber = true;
+    }
   });
 });
 
