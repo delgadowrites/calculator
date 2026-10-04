@@ -20,6 +20,14 @@ function divide(x, y) {
   }
 }
 
+function roundResult(value) {
+  if (value === "Error") {
+    return "Error";
+  } else {
+    return Number(value.toFixed(8));
+  }
+}
+
 function operate(operator, a, b) {
   if (operator === "+") {
     return add(a, b);
@@ -50,7 +58,7 @@ operatorButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     if (currentOperator !== null && startNewNumber === false) {
       const result = operate(currentOperator, Number(firstNumber), Number(display.textContent));
-      display.textContent = result;
+      display.textContent = roundResult(result);
     }
     firstNumber = display.textContent;
     currentOperator = button.textContent;
@@ -82,7 +90,7 @@ const equalsButton = document.querySelector(".equals");
 equalsButton.addEventListener("click", function () {
   if (currentOperator !== null) {
     const result = operate(currentOperator, Number(firstNumber), Number(display.textContent));
-    display.textContent = result;
+    display.textContent = roundResult(result);
     currentOperator = null;
     startNewNumber = true;
   }
