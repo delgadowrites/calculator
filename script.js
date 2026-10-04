@@ -87,3 +87,14 @@ equalsButton.addEventListener("click", function () {
     startNewNumber = true;
   }
 });
+
+const decimalButton = document.querySelector(".decimal");
+
+decimalButton.addEventListener("click", function () {
+  if (startNewNumber === true) {
+    display.textContent = "0.";
+    startNewNumber = false;
+  } else if (display.textContent.includes(".") === false) {
+    display.textContent = display.textContent + ".";
+  }
+});
