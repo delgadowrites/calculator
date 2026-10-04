@@ -78,7 +78,7 @@ digitButtons.forEach(function (button) {
       startNewNumber = false;
     } else if (display.textContent === "0") {
       display.textContent = button.textContent;
-    } else {
+    } else if (display.textContent.length < 12) {
       display.textContent = display.textContent + button.textContent;
     }
   });
