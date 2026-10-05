@@ -10,6 +10,7 @@
 - Typed numbers are limited to 12 characters.
 - Long numbers and results wrap inside the display instead of spilling outside it (`overflow-wrap: anywhere`).
 - Published the calculator on GitHub Pages: https://delgadowrites.github.io/calculator/
+- Added a README with a live demo link, features, what I learned, and tech used.
 
 ### Changed
 - Layout: the clear button moved to its own full-width row below the display and was relabeled `CLEAR`; the `.` button took its old spot next to `0`.
